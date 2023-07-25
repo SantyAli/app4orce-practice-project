@@ -5,7 +5,6 @@ import SimpleLayout from './layouts/simple';
 //
 
 import UserPage from './pages/UserPage';
-import LoginPage from './pages/LoginPage';
 import Page404 from './pages/Page404';
 import SignIn from './pages/SignInPage';
 import OTP from './pages/OtpPage';
@@ -26,10 +25,10 @@ export default function Router() {
         { path: 'chat', element: <ChatPage /> },
       ],
     },
-    {
-      path: 'login',
-      element: <LoginPage />,
-    },
+    // {
+    //   path: 'login',
+    //   element: <LoginPage />,
+    // },
     {
       element: <SimpleLayout />,
       children: [

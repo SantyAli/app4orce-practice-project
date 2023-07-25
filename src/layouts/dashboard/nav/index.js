@@ -3,11 +3,7 @@ import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 // @mui
 import { Box, Button, Drawer } from '@mui/material';
-// mock
-// hooks
-import useResponsive from '../../../hooks/useResponsive';
 // components
-import Scrollbar from '../../../components/scrollbar';
 import NavSection from '../../../components/nav-section';
 //
 import navConfig from './config';
@@ -22,8 +18,6 @@ Nav.propTypes = {
 export default function Nav({ openNav, onCloseNav }) {
   const { pathname } = useLocation();
 
-  const isDesktop = useResponsive('up', 'lg');
-
   useEffect(() => {
     if (openNav) {
       onCloseNav();
@@ -32,18 +26,13 @@ export default function Nav({ openNav, onCloseNav }) {
   }, [pathname]);
 
   const renderContent = (
-    <Scrollbar
-      sx={{
-        height: 1,
-        '& .simplebar-content': { height: 1, display: 'flex', flexDirection: 'column' },
-      }}
-    >
+    <>
       <Box sx={{ px: 2.5, py: 3, display: 'inline-flex', justifyContent: 'center' }}>
         <Button
           variant="contained"
           sx={{
             backgroundColor: '#31D7EC',
-            color: "black"
+            color: 'black',
           }}
         >
           English
@@ -51,7 +40,7 @@ export default function Nav({ openNav, onCloseNav }) {
       </Box>
 
       <NavSection data={navConfig} />
-    </Scrollbar>
+    </>
   );
 
   return (
@@ -62,34 +51,19 @@ export default function Nav({ openNav, onCloseNav }) {
         width: { lg: NAV_WIDTH },
       }}
     >
-      {isDesktop ? (
-        <Drawer
-          open
-          variant="permanent"
-          PaperProps={{
-            sx: {
-              width: NAV_WIDTH,
-              bgcolor: 'background.default',
-              borderRightStyle: 'dashed',
-            },
-          }}
-        >
-          {renderContent}
-        </Drawer>
-      ) : (
-        <Drawer
-          open={openNav}
-          onClose={onCloseNav}
-          ModalProps={{
-            keepMounted: true,
-          }}
-          PaperProps={{
-            sx: { width: NAV_WIDTH },
-          }}
-        >
-          {renderContent}
-        </Drawer>
-      )}
+      <Drawer
+        open
+        variant="permanent"
+        PaperProps={{
+          sx: {
+            width: NAV_WIDTH,
+            bgcolor: 'background.default',
+            borderRightStyle: 'dashed',
+          },
+        }}
+      >
+        {renderContent}
+      </Drawer>
     </Box>
   );
 }

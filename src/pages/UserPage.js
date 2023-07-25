@@ -22,7 +22,6 @@ import {
 // components
 
 import Iconify from '../components/iconify';
-import Scrollbar from '../components/scrollbar';
 // sections
 import { UserListHead, UserListToolbar } from '../sections/@dashboard/user';
 // mock
@@ -89,7 +88,7 @@ export default function UserPage() {
         <Card>
           <UserListToolbar filterName={filterName} onFilterName={handleFilterByName} />
 
-          <Scrollbar>
+          <>
             <TableContainer sx={{ minWidth: 800 }}>
               <Table>
                 <UserListHead headLabel={TABLE_HEAD} rowCount={USERLIST.length} />
@@ -102,7 +101,7 @@ export default function UserPage() {
                         <TableCell component="th" scope="row">
                           <Stack direction="row" alignItems="center" spacing={2}>
                             <Avatar alt={name} src={avatarUrl} />
-                            <Stack  direction="column">
+                            <Stack direction="column">
                               <Typography variant="subtitle2" noWrap>
                                 {name}
                               </Typography>
@@ -152,7 +151,7 @@ export default function UserPage() {
                 )}
               </Table>
             </TableContainer>
-          </Scrollbar>
+          </>
         </Card>
       </Container>
 
