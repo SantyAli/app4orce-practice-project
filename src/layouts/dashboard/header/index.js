@@ -7,6 +7,7 @@ import { bgBlur } from '../../../utils/cssStyles';
 // components
 import Iconify from '../../../components/iconify';
 import NotificationsPopover from './NotificationsPopover';
+import ProfilePopover from './ProfilePopover';
 
 // ----------------------------------------------------------------------
 
@@ -64,6 +65,7 @@ export default function Header({ onOpenNav }) {
           }}
         >
           <NotificationsPopover />
+          <ProfilePopover />
         </Stack>
       </StyledToolbar>
     </StyledRoot>

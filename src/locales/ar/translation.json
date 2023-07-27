@@ -1,0 +1,12 @@
+{
+    "name": "اسم",
+    "ahmad": "أحمد",
+    "button": "English",
+    "enterPhone": "أدخل رقم هاتفك",
+    "buttonText": "تسجيل الدخول",
+    "textedYouText": "نحن فقط أرسلنا لك رسالة نصية!",
+    "sendCodeText": "الرجاء إدخال الرمز الذي أرسلناه لك للتو على",
+    "verifyButtonText": "يؤكد",
+    "otpText": "لم تستلم OTP؟",
+    "resendButtonText": "إعادة إرسال"
+}

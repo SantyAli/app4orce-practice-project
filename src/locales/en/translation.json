@@ -1,0 +1,12 @@
+{
+    "name": "Name",
+    "ahmad": "Ahmad",
+    "button": "Arabic",
+    "enterPhone": "Enter your phone number",
+    "buttonText": "Sign In",
+    "textedYouText": "We just texted you!",
+    "sendCodeText": "Please enter the code we just sent you at",
+    "verifyButtonText": "Verify",
+    "otpText" : "Did not receive OTP?",
+    "resendButtonText": "Resend"
+}

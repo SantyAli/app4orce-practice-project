@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 // @mui
 import { Box, Button, Drawer } from '@mui/material';
 // components
@@ -16,6 +17,12 @@ Nav.propTypes = {
 };
 
 export default function Nav({ openNav, onCloseNav }) {
+  const { t, i18n } = useTranslation();
+  const changeLanguageHandler = (e) => {
+    e.preventDefault();
+    // const languageValue = e.target.value;
+    i18n.changeLanguage('ar');
+  };
   const { pathname } = useLocation();
 
   useEffect(() => {
@@ -30,12 +37,13 @@ export default function Nav({ openNav, onCloseNav }) {
       <Box sx={{ px: 2.5, py: 3, display: 'inline-flex', justifyContent: 'center' }}>
         <Button
           variant="contained"
+          onClick={(e) => changeLanguageHandler(e)}
           sx={{
             backgroundColor: '#31D7EC',
             color: 'black',
           }}
         >
-          English
+          {t('button')}
         </Button>
       </Box>
 
